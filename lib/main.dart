@@ -5,7 +5,7 @@ import 'package:net_ninja_world_clock/pages/home.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/home',
+    initialRoute: '/',
     routes: {
       '/': (context) => Loading(),
       '/home': (context) => Home(),
