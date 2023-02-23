@@ -36,7 +36,15 @@ class _LoadingState extends State<Loading> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Text('$time'),
+        child: Center(
+          child: Text(
+            '$time',
+            style: TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+            ),
+            ),
+        ),
         ),
     );
   }
