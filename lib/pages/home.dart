@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
 
-              SizedBox(height: 30,),
+              SizedBox(height: 30 ,),
         
               TextButton.icon(
                 onPressed: () {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 import 'package:net_ninja_world_clock/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
 
@@ -11,7 +12,7 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  String? time = 'loading...';
+  String? time = 'loading';
 
   void setupWorldTime() async{
     WorldTime instance = 
@@ -37,13 +38,24 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text(
-            '$time',
-            style: TextStyle(
-              fontSize: 50,
-              fontWeight: FontWeight.bold,
-            ),
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                '$time',
+                style: const TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SpinKitThreeBounce(
+                color: Colors.black,
+                size: 30.0,
+              ),
+            ],
+          ),
         ),
         ),
     );
