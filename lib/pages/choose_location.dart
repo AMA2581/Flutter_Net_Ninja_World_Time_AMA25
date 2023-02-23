@@ -12,7 +12,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Color.fromARGB(255, 250, 250, 250),
 
       appBar: AppBar(
         title: Text(
@@ -22,7 +22,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
           ),
         ),
         foregroundColor: Colors.blue,
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Color.fromARGB(255, 250, 250, 250),
         centerTitle: true,
         elevation: 0.0,
       ),
