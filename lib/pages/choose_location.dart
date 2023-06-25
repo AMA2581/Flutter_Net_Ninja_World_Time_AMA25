@@ -27,6 +27,14 @@ class _ChooseLocationState extends State<ChooseLocation> {
     await instance.getTime();
 
     // navigate back to home screen
+    if(instance.time == 'Could not get time data'){
+      goToNoInternet();
+    } else {
+      goToHome(instance);
+    }
+  }
+
+  void goToHome(WorldTime instance){
     Navigator.pop(context, {
       'location': instance.location,
       'flag': instance.flag,
@@ -34,6 +42,11 @@ class _ChooseLocationState extends State<ChooseLocation> {
       'isDaytime': instance.isDaytime,
     });
   }
+
+  void goToNoInternet(){
+    Navigator.pushReplacementNamed(context, '/noInternet');
+  }
+
   
   @override
   Widget build(BuildContext context) {

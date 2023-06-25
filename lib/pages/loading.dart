@@ -19,13 +19,25 @@ class _LoadingState extends State<Loading> {
       WorldTime(location: 'Tehran', flag: 'iran.png', url: 'Asia/Tehran');
     await instance.getTime();
     // print(instance.time);
+    if(instance.time == 'Could not get time data'){
+      goToNoInternet();
+    } else {
+      goToHome(instance);
+    }
+  }  
+
+  void goToHome(WorldTime instance){
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'location': instance.location,
       'flag': instance.flag,
       'time': instance.time,
       'isDaytime': instance.isDaytime,
     });
-  }  
+  }
+
+  void goToNoInternet(){
+    Navigator.pushReplacementNamed(context, '/noInternet');
+  }
 
   @override
   void initState() {
